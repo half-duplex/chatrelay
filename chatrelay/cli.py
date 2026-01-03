@@ -12,7 +12,9 @@ from chatrelay import ChatRelay
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description="Relay chat between platforms")
-    parser.add_argument("-c", "--config", help="What toml config file to read", default="config.toml")
+    parser.add_argument(
+        "-c", "--config", help="What toml config file to read", default="config.toml"
+    )
     args = parser.parse_args(argv or sys_argv[1:])
 
     toml = TOMLFile(args.config)
